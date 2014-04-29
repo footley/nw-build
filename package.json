@@ -1,0 +1,23 @@
+{
+  "author": "Jonathan Butcher",
+  "name": "nw-build",
+  "description": "Builds and packages node-webkit applications for linux, windows and osx. Commandline",
+  "homepage": "https://github.com/footley/nw-build/",
+  "version": "0.0.1",
+  "repository": {
+    "type" : "git"
+  , "url": "https://github.com/footley/nw-build/nw-build.git"
+  },
+  "main": "./lib/main",
+  "bin": {
+    "nw-build": "./bin/nw-build.js"
+  },
+  "dependencies": {
+    "commander": "2.2.0"
+  },
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
+  }
+}
