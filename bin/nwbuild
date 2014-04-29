@@ -1,0 +1,49 @@
+#!/usr/bin/env node
+"use strict";
+
+var program = require('commander');
+var nwbuild = require('../lib/nwbuild.js')
+
+// setup the command line interface
+program
+    .version('0.0.1')
+    .option('-i, --init', 'initialize the environment')
+    .option('-l, --libudev', 'fix libudev for recent versions of linux')
+
+    .option('-o, --name [myapp]', 'Applications name, mandatory')
+    .option('-r, --run', 'Run after build')
+    .option('-l, --linux', 'Package for linux')
+    .option('-w, --windows', 'Package for windows')
+    .option('-m, --mac', 'Package for max osx')
+    .parse(process.argv);
+
+if(program.init) {
+    nwbuild.init(program.libudev);
+}
+
+// build packages
+if(!program.linux && !program.windows && !program.mac) {
+    console.log("No further operations to perform")
+    return;
+}
+
+if(!program.name) {
+    console.log("No name supplied, aborting build")
+    return;
+}
+
+nwbuild.build(program.name, create_packages)
+
+function create_packages() {
+    if (program.linux) {
+        nwbuild.package_linux(program.name, program.run);
+    }
+
+    if (program.windows) {
+        nwbuild.package_windows(program.name, program.run);
+    }
+
+    if (program.mac) {
+        nwbuild.package_mac(program.name, program.run);
+    }
+}

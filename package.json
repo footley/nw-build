@@ -1,23 +1,29 @@
 {
-  "author": "Jonathan Butcher",
-  "name": "nw-build",
-  "description": "Builds and packages node-webkit applications for linux, windows and osx. Commandline",
-  "homepage": "https://github.com/footley/nw-build",
-  "version": "0.0.1",
-  "repository": {
-    "type" : "git"
-  , "url": "https://github.com/footley/nw-build.git"
-  },
-  "main": "./lib/main",
+  "name": "nwbuild",
+  "version": "0.0.2",
+  "description": "Builds and packages node-webkit applications for linux, windows and osx.",
+  "main": "./lib/nwbuild.js",
   "bin": {
-    "nw-build": "./bin/nw-build.js"
+    "nwbuild": "./bin/nwbuild"
   },
-  "dependencies": {
-    "commander": "2.2.0"
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "devDependencies": {},
-  "optionalDependencies": {},
-  "engines": {
-    "node": "*"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/footley/nw-build.git"
+  },
+  "keywords": [
+    "build",
+    "package",
+    "webkit"
+  ],
+  "author": "Jonathan Butcher",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/footley/nw-build/issues"
+  },
+  "dependencies" : {
+    "commander"   :  "2.2.0"
   }
 }
