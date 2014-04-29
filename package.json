@@ -1,6 +1,6 @@
 {
   "name": "nwbuild",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Builds and packages node-webkit applications for linux, windows and osx.",
   "main": "./lib/nwbuild.js",
   "bin": {
