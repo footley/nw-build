@@ -1,4 +1,4 @@
-node-webkit build
+node-webkit build - deleted
 =================
 
 Builds and packages node-webkit applications for linux, windows and osx.
